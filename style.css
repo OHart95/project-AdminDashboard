@@ -1,51 +1,63 @@
+:root {
+  --PRIMARY-COLOR: #143275;
+  --SECONDARY-COLOR: #F5F5F5;
+  --SKANSKA-WHITE: #FFF;
+}
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-body html {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+html, body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 100vh;
 }
 
-.sidenav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh; /* Full viewport height */
-    padding: 1rem;
-    background-color: cornflowerblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .sidenav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidenav li {
-    margin-bottom: 1rem;
-  }
-  
-  .sidenav a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: whitesmoke;
-    padding: 0.75rem;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    font-family: inherit
-  }
-  
-  .sidenav a:hover {
-    background-color: #e2e6ea;
-  }
-  
-  .icon {
-    margin-right: 0.75rem;
-    font-size: 1.25rem;
-  }
-  
+#main {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 6fr;
+  grid-template-areas: 
+    "sidenav header"
+    "sidenav content";
+  height: 100%;
+  width: 100%;
+}
+
+#sidenav {
+  background-color: var(--PRIMARY-COLOR);
+  grid-area: sidenav;
+}
+
+#header {
+  background-color: var(--SKANSKA-WHITE);
+  grid-area: header;
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 0; /*seems to not show the shadow without this*/
+}
+
+#content {
+  background-color: var(--SECONDARY-COLOR);
+  grid-area: content;
+  padding: 1rem;
+  padding-top: 2rem;
+}
+
+#yourProjects {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  height: 100%;
+  grid-gap: 1rem;
+}
+
+#cards {
+  background-color: aqua;
+  height: 100%;
+}
+
+#annTrend {
+  background-color: aquamarine;
+  height: 100%;
+}
