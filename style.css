@@ -1,3 +1,6 @@
+@import url('assets/fonts/ShapeSans/shapesans.css');
+
+
 :root {
   --PRIMARY-COLOR: #143275;
   --SECONDARY-COLOR: #F5F5F5;
@@ -11,7 +14,7 @@
 }
 
 html, body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'shape_sansdisplay';
     height: 100vh;
 }
 
@@ -42,7 +45,8 @@ html, body {
   background-color: var(--SECONDARY-COLOR);
   grid-area: content;
   display: grid;
-  grid-template-columns: 3fr 250px;
+  grid-template-columns: 3fr 325px;
+  padding-top: 1rem;
 }
 
 #yourProjects {
@@ -53,12 +57,17 @@ html, body {
   padding: 1rem;
 }
 
+#yourProjects h2 {
+  align-self: center;
+}
+
 #cards {
-  background-color: aqua;
+  /* background-color: aqua; */
   display: grid;
-  grid-template-columns: repeat(2, 400px);
+  grid-template-columns: repeat(auto-fill, 400px);
   gap: 1rem;
   padding: 1rem;
+  padding-top: 0px;
   /* height: 100%; */
   justify-items: center;
   justify-content: center;
@@ -80,8 +89,29 @@ html, body {
 }
 
 #annTrend {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+  padding: 1rem;
+}
+
+#annoucements, #trending {
+  background-color: var(--SKANSKA-WHITE);
+  box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#annoucements {
+  height: 400px;
+  
+}
+
+#trending {
+  height: 350px;
 }
 
 @media (max-width: 1380px) {
